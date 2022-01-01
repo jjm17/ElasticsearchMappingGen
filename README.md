@@ -1,2 +1,2 @@
-# ElasticsearchMappingGen
-Generates Elasticsearch mappings (from Avro schema)
+# Elasticsearch Mapping Generator
+Generates Elasticsearch mappings from Avro schema files (JSON).
