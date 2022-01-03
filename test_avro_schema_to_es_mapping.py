@@ -10,10 +10,9 @@ class TestAvroSchemaToESMapping(unittest.TestCase):
 
     def test_simple(self):
         '''Test a simple, one-level "record" schema'''
-        expected = {"mapping": {
+        expected = {"mappings": {
                 "doc": {
-                    "dynamic": False,
-                    "strict": True,
+                    "dynamic": "strict",
                     "properties": {
                         "Name": {
                             "type": "keyword",
@@ -33,10 +32,9 @@ class TestAvroSchemaToESMapping(unittest.TestCase):
 
     def test_array(self):
         '''Conversion of a schema defining a simple array of integers'''
-        expected = {"mapping": {
+        expected = {"mappings": {
                 "doc": {
-                    "dynamic": False,
-                    "strict": True,
+                    "dynamic": "strict",
                     "properties": {
                         "integers": {
                             "properties": {
@@ -52,10 +50,9 @@ class TestAvroSchemaToESMapping(unittest.TestCase):
 
     def test_union(self):
         '''Conversion of a schema defining a union of a nullable string'''
-        expected = {"mapping": {
+        expected = {"mappings": {
                 "doc": {
-                    "dynamic": False,
-                    "strict": True,
+                    "dynamic": "strict",
                     "properties": {
                         "address": {
                             "properties": {
