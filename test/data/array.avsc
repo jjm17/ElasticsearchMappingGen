@@ -1,0 +1,16 @@
+{
+    "type" : "record",
+    "name" : "Integers",
+    "fields" : [
+        {
+            "name": "integers",
+            "type": {
+                "type": "array",
+                "items": {
+                    "name": "Integer",
+                    "type": "int"
+                }
+            }
+        }
+    ]
+}
