@@ -11,18 +11,16 @@ class TestAvroSchemaToESMapping(unittest.TestCase):
     def test_simple(self):
         '''Test a simple, one-level "record" schema'''
         expected = {"mappings": {
-                "doc": {
-                    "dynamic": "strict",
-                    "properties": {
-                        "Name": {
-                            "type": "keyword",
-                            "ignore_above": 256,
-                            "norms": False,
-                            "index_options": "freqs"
-                        },
-                        "Age": {
-                            "type": "integer"
-                        }
+                "dynamic": "strict",
+                "properties": {
+                    "Name": {
+                        "type": "keyword",
+                        "ignore_above": 256,
+                        "norms": False,
+                        "index_options": "freqs"
+                    },
+                    "Age": {
+                        "type": "integer"
                     }
                 }
             }
@@ -33,13 +31,11 @@ class TestAvroSchemaToESMapping(unittest.TestCase):
     def test_array(self):
         '''Conversion of a schema defining a simple array of integers'''
         expected = {"mappings": {
-                "doc": {
-                    "dynamic": "strict",
-                    "properties": {
-                        "integers": {
-                            "properties": {
-                                "type": "integer"
-                            }
+                "dynamic": "strict",
+                "properties": {
+                    "integers": {
+                        "properties": {
+                            "type": "integer"
                         }
                     }
                 }
@@ -51,16 +47,14 @@ class TestAvroSchemaToESMapping(unittest.TestCase):
     def test_union(self):
         '''Conversion of a schema defining a union of a nullable string'''
         expected = {"mappings": {
-                "doc": {
-                    "dynamic": "strict",
-                    "properties": {
-                        "address": {
-                            "properties": {
-                                "type": "keyword",
-                                "ignore_above": 256,
-                                "norms": False,
-                                "index_options": "freqs"
-                            }
+                "dynamic": "strict",
+                "properties": {
+                    "address": {
+                        "properties": {
+                            "type": "keyword",
+                            "ignore_above": 256,
+                            "norms": False,
+                            "index_options": "freqs"
                         }
                     }
                 }

@@ -86,6 +86,6 @@ def from_avro_schema_to_es_mapping(filename):
     avro_schema = avro.schema.parse(open(filename, "rb").read())
     # The Avro schema is assumed to precisely define subsequent data
     # - no unexpected fields!
-    es_mapping = {"mappings": {"doc": {"dynamic": "strict"}}}
-    es_mapping['mappings']["doc"]["properties"] = to_es_mapping(avro_schema)
+    es_mapping = {"mappings": {"dynamic": "strict"}}
+    es_mapping['mappings']["properties"] = to_es_mapping(avro_schema)
     return json.dumps(es_mapping)
