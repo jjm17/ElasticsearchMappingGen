@@ -34,9 +34,7 @@ class TestAvroSchemaToESMapping(unittest.TestCase):
                 "dynamic": "strict",
                 "properties": {
                     "integers": {
-                        "properties": {
-                            "type": "integer"
-                        }
+                        "type": "integer"
                     }
                 }
             }
@@ -50,12 +48,10 @@ class TestAvroSchemaToESMapping(unittest.TestCase):
                 "dynamic": "strict",
                 "properties": {
                     "address": {
-                        "properties": {
-                            "type": "keyword",
-                            "ignore_above": 256,
-                            "norms": False,
-                            "index_options": "freqs"
-                        }
+                        "type": "keyword",
+                        "ignore_above": 256,
+                        "norms": False,
+                        "index_options": "freqs"
                     }
                 }
             }

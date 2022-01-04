@@ -61,10 +61,9 @@ def from_avro_complex_type_to_es_mapping(schema):
             for sub_schema in filter(
                     lambda s: s.type != "null", field.type.schemas):
                 sub_mapping = to_es_mapping(sub_schema)
-            mapping[field.props['name']] = {"properties": sub_mapping}
+            mapping[field.props['name']] = sub_mapping
         elif field.type.type == 'array':
-            mapping[field.name] = {"properties": to_es_mapping(
-                field.type.items)}
+            mapping[field.name] = to_es_mapping(field.type.items)
         elif field.type.type in avro_primitive_to_es_type:
             mapping[field.name] = to_es_mapping(field.type)
         elif field.type.type in avro_complex:
